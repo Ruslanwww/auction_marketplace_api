@@ -1,0 +1,13 @@
+class CreateOrders < ActiveRecord::Migration[5.2]
+  def change
+    create_table :orders do |t|
+      t.references :user, foreign_key: true
+      t.references :lot, foreign_key: true
+      t.text :arrival_location
+      t.string :arrival_type
+      t.string :status, default: 'pending'
+
+      t.timestamps
+    end
+  end
+end
