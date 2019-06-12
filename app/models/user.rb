@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :lots, dependent: :destroy
+  has_many :bids, dependent: :destroy
+  has_many :orders, dependent: :destroy
+
 end
