@@ -46,5 +46,4 @@ class User < ActiveRecord::Base
   has_many :lots, dependent: :destroy
   has_many :bids, dependent: :destroy
   has_many :orders, dependent: :destroy
-
 end
