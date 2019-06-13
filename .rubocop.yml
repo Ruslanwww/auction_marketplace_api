@@ -4,6 +4,13 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 2.5
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'spec/rails_helper\.rb'
+    - 'spec/spec_helper\.rb'
 
 Rails:
   Enabled: true
