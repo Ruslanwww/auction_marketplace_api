@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab8ffd12-44ba-4dd5-a49c-0b5cd7641756" name="Default Changelist" comment="Added">
+      <change afterPath="$PROJECT_DIR$/spec/support/factory_bot.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/auction_marketplace_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/auction_marketplace_api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/bid_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/bid_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/lot_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/lot_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/order_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/order_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/user_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -29,11 +35,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            <state relative-caret-position="78">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/support/factory_bot.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -56,6 +80,8 @@
         <option value="$PROJECT_DIR$/app/models/lot.rb" />
         <option value="$PROJECT_DIR$/.rubocop.yml" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/spec/support/factory_bot.rb" />
+        <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
       </list>
     </option>
   </component>
@@ -105,12 +131,6 @@
               <item name="auction_marketplace_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auction_marketplace_api" type="462c0819:PsiDirectoryNode" />
               <item name="spec" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auction_marketplace_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auction_marketplace_api" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,7 +305,7 @@
       <option name="presentableId" value="Default" />
       <updated>1560335432345</updated>
       <workItem from="1560335434233" duration="14954000" />
-      <workItem from="1560413168500" duration="12311000" />
+      <workItem from="1560413168500" duration="13632000" />
     </task>
     <servers />
   </component>
@@ -298,17 +318,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27265000" />
+    <option name="totallyTimeSpent" value="28586000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="741" extended-state="1" />
+    <frame x="0" y="0" width="1366" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25378788" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25378788" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4969697" weight="0.32546374" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4969697" visible="true" weight="0.32546374" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5030303" side_tool="true" weight="0.32546374" />
       <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.49924242" weight="0.32715008" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49848485" weight="0.32715008" />
@@ -428,12 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.rspec">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -443,10 +457,27 @@
     <entry file="file://$PROJECT_DIR$/spec/models/bid_spec.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.rspec">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="78">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/support/factory_bot.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
