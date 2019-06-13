@@ -34,6 +34,8 @@ gem 'rack-cors'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'rubocop', '~> 0.71.0', require: false
 end
 
 group :development do
@@ -43,6 +45,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'annotate'
+  gem "rubocop-rails_config", "0.5.1"
 end
 
 
