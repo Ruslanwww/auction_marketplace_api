@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab8ffd12-44ba-4dd5-a49c-0b5cd7641756" name="Default Changelist" comment="Added">
-      <change afterPath="$PROJECT_DIR$/spec/linters/rubocop_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/support/shoulda_matchers.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/support/simplecov.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/auction_marketplace_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/auction_marketplace_api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rubocop.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/user_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -21,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/auction_marketplace_api@User__auction_marketplace_api.rcov" NAME="User: auction_marketplace_api Coverage Results" MODIFIED="1560459534219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@User__auction_marketplace_api.rcov" NAME="User: auction_marketplace_api Coverage Results" MODIFIED="1560511690542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@spec__auction_marketplace_api.rcov" NAME="spec: auction_marketplace_api Coverage Results" MODIFIED="1560335547132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_should_create_a_user__auction_marketplace_api.rcov" NAME="User should create a user: auction_marketplace_api Coverage Results" MODIFIED="1560457005552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@Bid__auction_marketplace_api.rcov" NAME="Bid: auction_marketplace_api Coverage Results" MODIFIED="1560447368511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
@@ -29,39 +34,21 @@
     <SUITE FILE_PATH="coverage/auction_marketplace_api@Development__auction_marketplace_api.rcov" NAME="Development: auction_marketplace_api Coverage Results" MODIFIED="1560452565807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.rubocop.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="380">
+              <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spec/linters/rubocop_spec.rb">
+        <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -78,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="50">
               <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
@@ -101,15 +88,17 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/models/lot.rb" />
         <option value="$PROJECT_DIR$/spec/support/factory_bot.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
         <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
         <option value="$PROJECT_DIR$/spec/factories/users.rb" />
         <option value="$PROJECT_DIR$/.rspec" />
-        <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
         <option value="$PROJECT_DIR$/.rubocop.yml" />
         <option value="$PROJECT_DIR$/spec/linters/rubocop_spec.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/spec/support/shoulda_matchers.rb" />
+        <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
+        <option value="$PROJECT_DIR$/spec/support/simplecov.rb" />
+        <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
       </list>
     </option>
   </component>
@@ -164,12 +153,6 @@
               <item name="auction_marketplace_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auction_marketplace_api" type="462c0819:PsiDirectoryNode" />
               <item name="spec" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auction_marketplace_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auction_marketplace_api" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
               <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -197,7 +180,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.rubocop analysis: auction_marketplace_api">
+  <component name="RunManager" selected="RSpec.User: auction_marketplace_api">
     <configuration name="Bid: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="auction_marketplace_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -431,8 +414,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="RSpec.rubocop analysis: auction_marketplace_api" />
         <item itemvalue="RSpec.User: auction_marketplace_api" />
+        <item itemvalue="RSpec.rubocop analysis: auction_marketplace_api" />
         <item itemvalue="RSpec.User should create a user: auction_marketplace_api" />
         <item itemvalue="RSpec.Bid: auction_marketplace_api" />
       </list>
@@ -450,20 +433,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560335432345</updated>
       <workItem from="1560335434233" duration="14954000" />
-      <workItem from="1560413168500" duration="23492000" />
+      <workItem from="1560413168500" duration="23881000" />
+      <workItem from="1560510623885" duration="1110000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="User__auction_marketplace_api - 2019.06.13 at 23h 56m 43s.xml">
-      <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
-    </history-entry>
-    <history-entry file="User__auction_marketplace_api - 2019.06.13 at 23h 56m 56s.xml">
-      <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
-    </history-entry>
-    <history-entry file="User__auction_marketplace_api - 2019.06.13 at 23h 57m 12s.xml">
-      <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
-    </history-entry>
     <history-entry file="User__auction_marketplace_api - 2019.06.13 at 23h 58m 05s.xml">
       <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
@@ -485,16 +460,25 @@
     <history-entry file="rubocop_analysis__auction_marketplace_api - 2019.06.14 at 00h 25m 54s.xml">
       <configuration name="rubocop analysis: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
+    <history-entry file="rubocop_analysis__auction_marketplace_api - 2019.06.14 at 00h 26m 21s.xml">
+      <configuration name="rubocop analysis: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    </history-entry>
+    <history-entry file="User__auction_marketplace_api - 2019.06.14 at 14h 14m 40s.xml">
+      <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    </history-entry>
+    <history-entry file="User__auction_marketplace_api - 2019.06.14 at 14h 28m 14s.xml">
+      <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38446000" />
+    <option name="totallyTimeSpent" value="39945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25378788" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25757575" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4969697" weight="0.32546374" />
@@ -628,41 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/factories/users.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.rspec">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -675,6 +624,13 @@
         <state relative-caret-position="-2216" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spec/linters/rubocop_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.rubocop.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -682,17 +638,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="50">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/linters/rubocop_spec.rb">
+    <entry file="file://$PROJECT_DIR$/spec/factories/users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="75">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/support/simplecov.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/support/shoulda_matchers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>

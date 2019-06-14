@@ -97,6 +97,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails_config (v0.5.1, RVM: ruby-2.5.1 [auction]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.10.1, RVM: ruby-2.5.1 [auction]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_dep (v1.5.0, RVM: ruby-2.5.1 [auction]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="shoulda-matchers (v4.1.0, RVM: ruby-2.5.1 [auction]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.16.1, RVM: ruby-2.5.1 [auction]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.10.2, RVM: ruby-2.5.1 [auction]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring (v2.0.2, RVM: ruby-2.5.1 [auction]) [gem]" level="application" />
