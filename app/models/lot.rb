@@ -24,4 +24,40 @@ class Lot < ApplicationRecord
   belongs_to :user
   has_many :bids, dependent: :destroy
   has_one :order, dependent: :destroy
+
+  validates :title, presence: true
+  validates :current_price, presence: true
+  validates :estimated_price, presence: true
+  validates_numericality_of :current_price, :estimated_price, greater_than: 0.0
+  validates :lot_start_time, presence: true
+  validates :lot_end_time, presence: true
+  validate :est_price_greater_current
+  validate :end_after_start
+  validate :start_after_current_time
+
+  private
+
+    def est_price_greater_current
+      return if estimated_price.blank? || current_price.blank?
+
+      if estimated_price < current_price
+        errors.add(:estimated_price, "must be greater than current price")
+      end
+    end
+
+    def start_after_current_time
+      return if lot_start_time.blank?
+
+      if lot_start_time < Date.current
+        errors.add(:lot_start_time, "must be after the current time")
+      end
+    end
+
+    def end_after_start
+      return if lot_end_time.blank? || lot_start_time.blank?
+
+      if lot_end_time < lot_start_time
+        errors.add(:lot_end_time, "must be after the start time")
+      end
+    end
 end

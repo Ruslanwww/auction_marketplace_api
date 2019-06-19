@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab8ffd12-44ba-4dd5-a49c-0b5cd7641756" name="Default Changelist" comment="Added">
+      <change afterPath="$PROJECT_DIR$/spec/factories/lots.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/lot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/lot.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/factories/users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/factories/users.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/user_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/lot_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/lot_spec.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -21,28 +22,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/auction_marketplace_api@User__auction_marketplace_api.rcov" NAME="User: auction_marketplace_api Coverage Results" MODIFIED="1560951790099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@User__auction_marketplace_api.rcov" NAME="User: auction_marketplace_api Coverage Results" MODIFIED="1560960747787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@spec__auction_marketplace_api.rcov" NAME="spec: auction_marketplace_api Coverage Results" MODIFIED="1560335547132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_password_validates_the_length_in_6__128__auction_marketplace_api.rcov" NAME="User#password validates the length in 6..128: auction_marketplace_api Coverage Results" MODIFIED="1560942390234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_lastname__auction_marketplace_api.rcov" NAME="User#lastname: auction_marketplace_api Coverage Results" MODIFIED="1560871514866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_password_validates_the_length_in_6__80__auction_marketplace_api.rcov" NAME="User#password validates the length in 6..80: auction_marketplace_api Coverage Results" MODIFIED="1560942341864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_estimated_price_validates_the_greater_than_current_price__auction_marketplace_api.rcov" NAME="Lot#estimated_price validates the greater than current price: auction_marketplace_api Coverage Results" MODIFIED="1560966877618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_password__auction_marketplace_api.rcov" NAME="User#password: auction_marketplace_api Coverage Results" MODIFIED="1560871851551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_birth_day__auction_marketplace_api.rcov" NAME="User#birth_day: auction_marketplace_api Coverage Results" MODIFIED="1560950194810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_email_requires_a_unique__auction_marketplace_api.rcov" NAME="User#email requires a unique: auction_marketplace_api Coverage Results" MODIFIED="1560875505539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_Associations__auction_marketplace_api.rcov" NAME="User Associations: auction_marketplace_api Coverage Results" MODIFIED="1560852784976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_estimated_price_validates_the_greater_than_0__auction_marketplace_api.rcov" NAME="Lot#estimated_price validates the greater than 0: auction_marketplace_api Coverage Results" MODIFIED="1560958618457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_email__auction_marketplace_api.rcov" NAME="User#email: auction_marketplace_api Coverage Results" MODIFIED="1560884923366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_should_create_a_user__auction_marketplace_api.rcov" NAME="User should create a user: auction_marketplace_api Coverage Results" MODIFIED="1560871889820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
-    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot__auction_marketplace_api.rcov" NAME="Lot: auction_marketplace_api Coverage Results" MODIFIED="1560855401802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@Bid__auction_marketplace_api.rcov" NAME="Bid: auction_marketplace_api Coverage Results" MODIFIED="1560855691181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot__auction_marketplace_api.rcov" NAME="Lot: auction_marketplace_api Coverage Results" MODIFIED="1560967648073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@Development__auction_marketplace_api.rcov" NAME="Development: auction_marketplace_api Coverage Results" MODIFIED="1560943206117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_firstname__auction_marketplace_api.rcov" NAME="User#firstname: auction_marketplace_api Coverage Results" MODIFIED="1560871475052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@Order__auction_marketplace_api.rcov" NAME="Order: auction_marketplace_api Coverage Results" MODIFIED="1560855507503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_phone_unique_required__auction_marketplace_api.rcov" NAME="User#phone unique required: auction_marketplace_api Coverage Results" MODIFIED="1560940927636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_title__auction_marketplace_api.rcov" NAME="Lot#title: auction_marketplace_api Coverage Results" MODIFIED="1560957153517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api.rcov" NAME="Lot#lot_end_time validates the greater than start time: auction_marketplace_api Coverage Results" MODIFIED="1560967506317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_current_price_validates_the_greater_than_0__auction_marketplace_api.rcov" NAME="Lot#current_price validates the greater than 0: auction_marketplace_api Coverage Results" MODIFIED="1560958351559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_lot_start_time__auction_marketplace_api.rcov" NAME="Lot#lot_start_time: auction_marketplace_api Coverage Results" MODIFIED="1560966895403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_email_validates_the_regexp__auction_marketplace_api.rcov" NAME="User#email validates the regexp: auction_marketplace_api Coverage Results" MODIFIED="1560885408852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_phone_requires_a_unique_email__auction_marketplace_api.rcov" NAME="User#phone requires a unique email: auction_marketplace_api Coverage Results" MODIFIED="1560874859458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_birth_day_validates_age_must_be___21__auction_marketplace_api.rcov" NAME="User#birth_day validates age must be &gt; 21: auction_marketplace_api Coverage Results" MODIFIED="1560949736738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_phone_validates_the_regexp__auction_marketplace_api.rcov" NAME="User#phone validates the regexp: auction_marketplace_api Coverage Results" MODIFIED="1560941320925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@rubocop_analysis__auction_marketplace_api.rcov" NAME="rubocop analysis: auction_marketplace_api Coverage Results" MODIFIED="1560461177075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_current_price__auction_marketplace_api.rcov" NAME="Lot#current_price: auction_marketplace_api Coverage Results" MODIFIED="1560958170175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
+    <SUITE FILE_PATH="coverage/auction_marketplace_api@Lot_lot_start_time_validates_the_greater_than_current_time__auction_marketplace_api.rcov" NAME="Lot#lot_start_time validates the greater than current time: auction_marketplace_api Coverage Results" MODIFIED="1560967031628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_phone__auction_marketplace_api.rcov" NAME="User#phone: auction_marketplace_api Coverage Results" MODIFIED="1560941805674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_phone_validates_the_uniqueness_of_mobile_phone_number__auction_marketplace_api.rcov" NAME="User#phone validates the uniqueness of mobile_phone_number: auction_marketplace_api Coverage Results" MODIFIED="1560884842406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
     <SUITE FILE_PATH="coverage/auction_marketplace_api@User_email_validates_the_uniqueness__auction_marketplace_api.rcov" NAME="User#email validates the uniqueness: auction_marketplace_api Coverage Results" MODIFIED="1560885270028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auction_marketplace_api" />
@@ -50,19 +59,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/factories/users.rb">
+        <entry file="file://$PROJECT_DIR$/spec/factories/lots.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+            <state relative-caret-position="135">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/models/lot_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="915">
+              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/lot.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/factories/users.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+            <state relative-caret-position="435">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -70,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="140">
+              <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -90,7 +126,6 @@
         <option value="$PROJECT_DIR$/config/initializers/cors.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190612170230_create_lots.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190612181029_create_orders.rb" />
-        <option value="$PROJECT_DIR$/app/models/lot.rb" />
         <option value="$PROJECT_DIR$/spec/support/factory_bot.rb" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.rspec" />
@@ -99,14 +134,16 @@
         <option value="$PROJECT_DIR$/spec/support/simplecov.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/.rubocop.yml" />
-        <option value="$PROJECT_DIR$/spec/models/lot_spec.rb" />
         <option value="$PROJECT_DIR$/spec/models/order_spec.rb" />
         <option value="$PROJECT_DIR$/spec/models/bid_spec.rb" />
         <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
         <option value="$PROJECT_DIR$/spec/factories/users.rb" />
         <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/factories/lots.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/spec/models/lot_spec.rb" />
+        <option value="$PROJECT_DIR$/app/models/lot.rb" />
       </list>
     </option>
   </component>
@@ -117,7 +154,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="width" value="1366" />
     <option name="height" value="741" />
   </component>
@@ -199,8 +236,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.User: auction_marketplace_api">
-    <configuration name="User: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+  <component name="RunManager" selected="RSpec.Lot: auction_marketplace_api">
+    <configuration name="Lot: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="auction_marketplace_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -220,10 +257,10 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/lot_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Lot" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -234,7 +271,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+    <configuration name="Lot#estimated_price validates the greater than current price: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="auction_marketplace_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -254,10 +291,10 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/lot_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User#birth_day validates age must be &gt; 21" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Lot#estimated_price validates the greater than current price" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -268,7 +305,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="User#birth_day: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+    <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="auction_marketplace_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -288,10 +325,10 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/lot_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User#birth_day" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Lot#lot_end_time validates the greater than start time" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -302,7 +339,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="User#password validates the length in 6..128: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+    <configuration name="Lot#lot_start_time validates the greater than current time: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="auction_marketplace_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -322,10 +359,10 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/lot_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User#password validates the length in 6..128" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Lot#lot_start_time validates the greater than current time" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -336,7 +373,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="User#password validates the length in 6..80: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+    <configuration name="Lot#lot_start_time: auction_marketplace_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="auction_marketplace_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -356,10 +393,10 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/lot_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User#password validates the length in 6..80" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Lot#lot_start_time" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -467,11 +504,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="RSpec.User: auction_marketplace_api" />
-        <item itemvalue="RSpec.User#birth_day: auction_marketplace_api" />
-        <item itemvalue="RSpec.User#birth_day validates age must be &gt; 21: auction_marketplace_api" />
-        <item itemvalue="RSpec.User#password validates the length in 6..128: auction_marketplace_api" />
-        <item itemvalue="RSpec.User#password validates the length in 6..80: auction_marketplace_api" />
+        <item itemvalue="RSpec.Lot: auction_marketplace_api" />
+        <item itemvalue="RSpec.Lot#lot_end_time validates the greater than start time: auction_marketplace_api" />
+        <item itemvalue="RSpec.Lot#lot_start_time validates the greater than current time: auction_marketplace_api" />
+        <item itemvalue="RSpec.Lot#lot_start_time: auction_marketplace_api" />
+        <item itemvalue="RSpec.Lot#estimated_price validates the greater than current price: auction_marketplace_api" />
       </list>
     </recent_temporary>
   </component>
@@ -490,44 +527,44 @@
       <workItem from="1560413168500" duration="23881000" />
       <workItem from="1560510623885" duration="1974000" />
       <workItem from="1560850425672" duration="21168000" />
-      <workItem from="1560934315661" duration="8838000" />
+      <workItem from="1560934315661" duration="19503000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="User#birth_day_validates_age_must_be___21__auction_marketplace_api - 2019.06.19 at 16h 06m 30s.xml">
-      <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_start_time_validates_the_greater_than_current_time__auction_marketplace_api - 2019.06.19 at 20h 57m 16s.xml">
+      <configuration name="Lot#lot_start_time validates the greater than current time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User#birth_day_validates_age_must_be___21__auction_marketplace_api - 2019.06.19 at 16h 06m 42s.xml">
-      <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api - 2019.06.19 at 20h 59m 09s.xml">
+      <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User#birth_day_validates_age_must_be___21__auction_marketplace_api - 2019.06.19 at 16h 06m 54s.xml">
-      <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api - 2019.06.19 at 20h 59m 50s.xml">
+      <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User#birth_day_validates_age_must_be___21__auction_marketplace_api - 2019.06.19 at 16h 07m 08s.xml">
-      <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api - 2019.06.19 at 21h 00m 35s.xml">
+      <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User#birth_day_validates_age_must_be___21__auction_marketplace_api - 2019.06.19 at 16h 07m 28s.xml">
-      <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api - 2019.06.19 at 21h 02m 51s.xml">
+      <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User#birth_day_validates_age_must_be___21__auction_marketplace_api - 2019.06.19 at 16h 08m 08s.xml">
-      <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api - 2019.06.19 at 21h 03m 11s.xml">
+      <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User#birth_day_validates_age_must_be___21__auction_marketplace_api - 2019.06.19 at 16h 09m 01s.xml">
-      <configuration name="User#birth_day validates age must be &gt; 21: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api - 2019.06.19 at 21h 04m 33s.xml">
+      <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User__auction_marketplace_api - 2019.06.19 at 16h 09m 57s.xml">
-      <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot#lot_end_time_validates_the_greater_than_start_time__auction_marketplace_api - 2019.06.19 at 21h 05m 11s.xml">
+      <configuration name="Lot#lot_end_time validates the greater than start time: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User__auction_marketplace_api - 2019.06.19 at 16h 12m 10s.xml">
-      <configuration name="User: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot__auction_marketplace_api - 2019.06.19 at 21h 07m 05s.xml">
+      <configuration name="Lot: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="User#birth_day__auction_marketplace_api - 2019.06.19 at 16h 16m 41s.xml">
-      <configuration name="User#birth_day: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Lot__auction_marketplace_api - 2019.06.19 at 21h 07m 33s.xml">
+      <configuration name="Lot: auction_marketplace_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70815000" />
+    <option name="totallyTimeSpent" value="81480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="741" extended-state="0" />
@@ -537,14 +574,14 @@
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2659091" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4969697" weight="0.32546374" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.4969697" visible="true" weight="0.32546374" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5030303" side_tool="true" weight="0.32546374" />
       <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.49924242" weight="0.32715008" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49848485" weight="0.32715008" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49772727" visible="true" weight="0.32715008" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49772727" weight="0.32715008" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -672,18 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/lot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/lot_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/bid.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -755,24 +780,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spec/factories/users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/lot_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/factories/lots.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="140">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/lot.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+        <state relative-caret-position="170">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="17" />
         </state>
       </provider>
     </entry>

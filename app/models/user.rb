@@ -58,9 +58,9 @@ class User < ActiveRecord::Base
 
   private
 
-  def validate_age
-    if birth_day.present? && birth_day > 21.years.ago
-      errors.add(:birth_day, 'You must be 21 years or older')
+    def validate_age
+      if birth_day.present? && birth_day > 21.years.ago
+        errors.add(:birth_day, "You must be 21 years or older")
+      end
     end
-  end
 end
