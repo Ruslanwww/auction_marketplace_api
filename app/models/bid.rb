@@ -2,13 +2,12 @@
 #
 # Table name: bids
 #
-#  id                :integer          not null, primary key
-#  bid_creation_time :datetime
-#  proposed_price    :decimal(, )
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  lot_id            :integer
-#  user_id           :integer
+#  id             :integer          not null, primary key
+#  proposed_price :decimal(, )
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  lot_id         :integer
+#  user_id        :integer
 #
 # Indexes
 #
