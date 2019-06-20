@@ -18,4 +18,18 @@
 class Bid < ApplicationRecord
   belongs_to :user
   belongs_to :lot
+
+  validates :proposed_price, presence: true
+  validates_numericality_of :proposed_price, greater_than: 0.0
+  validate :proposed_great_current
+
+  private
+
+    def proposed_great_current
+      return if proposed_price.blank? || lot.current_price.blank?
+
+      if proposed_price <= lot.current_price
+        errors.add(:proposed_price, "must be greater than current price")
+      end
+    end
 end

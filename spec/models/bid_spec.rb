@@ -22,4 +22,22 @@ RSpec.describe Bid, type: :model do
     it { should belong_to(:user) }
     it { should belong_to(:lot) }
   end
+
+  describe "#proposed_price" do
+    let(:bid) { create(:bid) }
+
+    it { should validate_presence_of(:proposed_price) }
+
+    it "validates the greater than 0" do
+      bid.proposed_price = -1.1
+      bid.valid?
+      expect(bid.errors[:proposed_price]).to include "must be greater than 0.0"
+    end
+
+    it "validates the greater than current price" do
+      bid.proposed_price = bid.lot.current_price - 1.5
+      bid.valid?
+      expect(bid.errors[:proposed_price]).to include "must be greater than current price"
+    end
+  end
 end
