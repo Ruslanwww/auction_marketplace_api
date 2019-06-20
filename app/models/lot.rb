@@ -21,6 +21,8 @@
 #
 
 class Lot < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   belongs_to :user
   has_many :bids, dependent: :destroy
   has_one :order, dependent: :destroy
