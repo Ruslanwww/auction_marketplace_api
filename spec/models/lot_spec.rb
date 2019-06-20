@@ -85,5 +85,9 @@ RSpec.describe Lot, type: :model do
       lot.valid?
       expect(lot.errors[:lot_end_time]).to include "must be after the start time"
     end
+
+    describe "#status" do
+      it { should validate_presence_of(:status) }
+    end
   end
 end

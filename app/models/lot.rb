@@ -29,6 +29,7 @@ class Lot < ApplicationRecord
   validates :current_price, presence: true
   validates :estimated_price, presence: true
   validates_numericality_of :current_price, :estimated_price, greater_than: 0.0
+  validates :status, presence: true
   validates :lot_start_time, presence: true
   validates :lot_end_time, presence: true
   validate :est_price_greater_current
