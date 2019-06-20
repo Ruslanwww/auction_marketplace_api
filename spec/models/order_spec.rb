@@ -24,4 +24,16 @@ RSpec.describe Order, type: :model do
     it { should belong_to(:user) }
     it { should belong_to(:lot) }
   end
+
+  describe "#arrival_location" do
+    it { should validate_presence_of(:arrival_location) }
+  end
+
+  describe "#arrival_type" do
+    it { should validate_presence_of(:arrival_type) }
+  end
+
+  describe "#status" do
+    it { should validate_presence_of(:status) }
+  end
 end
