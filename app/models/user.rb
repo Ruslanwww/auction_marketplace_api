@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
 
   validates :firstname, presence: true
   validates :lastname, presence: true
-  validates :phone, presence: true, uniqueness: true # , case_sensitive: false
+  validates :phone, presence: true, uniqueness: true
   validates :email, uniqueness: true
   validates_format_of :phone, with: /\A(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[- .]?\d{3}[- .]?\d{4}\z/,
                       message: "is not a phone"
