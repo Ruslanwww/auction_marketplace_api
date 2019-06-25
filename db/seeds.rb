@@ -9,3 +9,10 @@ User.destroy_all
 FactoryBot.create_list(:user, 10)
 
 puts "Created #{User.count} users"
+
+#Lot
+Lot.destroy_all
+
+FactoryBot.create_list(:lot, 10)
+
+puts "Created #{Lot.count} lots"
