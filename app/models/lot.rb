@@ -46,7 +46,7 @@ class Lot < ApplicationRecord
     def start_after_current_time
       return if lot_start_time.blank?
 
-      if lot_start_time < DateTime.current
+      if lot_start_time <= DateTime.current
         errors.add(:lot_start_time, "must be after the current time")
       end
     end
