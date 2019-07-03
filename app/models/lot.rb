@@ -27,13 +27,8 @@ class Lot < ApplicationRecord
   has_many :bids, dependent: :destroy
   has_one :order, dependent: :destroy
 
-  validates :title, presence: true
-  validates :current_price, presence: true
-  validates :estimated_price, presence: true
+  validates :title, :current_price, :estimated_price, :status, :lot_start_time, :lot_end_time, presence: true
   validates_numericality_of :current_price, :estimated_price, greater_than: 0.0
-  validates :status, presence: true
-  validates :lot_start_time, presence: true
-  validates :lot_end_time, presence: true
   validate :est_price_greater_current
   validate :end_after_start
   validate :start_after_current_time
@@ -51,7 +46,7 @@ class Lot < ApplicationRecord
     def start_after_current_time
       return if lot_start_time.blank?
 
-      if lot_start_time < Date.current
+      if lot_start_time < DateTime.current
         errors.add(:lot_start_time, "must be after the current time")
       end
     end

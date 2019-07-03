@@ -47,13 +47,10 @@ class User < ActiveRecord::Base
   has_many :bids, dependent: :destroy
   has_many :orders, dependent: :destroy
 
-  validates :firstname, presence: true
-  validates :lastname, presence: true
-  validates :phone, presence: true, uniqueness: true
-  validates :email, uniqueness: true
+  validates :firstname, :lastname, :phone, :birth_day, presence: true
+  validates :email, :phone, uniqueness: true
   validates_format_of :phone, with: /\A(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[- .]?\d{3}[- .]?\d{4}\z/,
                       message: "is not a phone"
-  validates :birth_day, presence: true
   validate :validate_age
 
   private
