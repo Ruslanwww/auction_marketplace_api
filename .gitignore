@@ -28,3 +28,4 @@
 
 /coverage
 Gemfile.lock
+.env
