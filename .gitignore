@@ -27,3 +27,6 @@
 /config/master.key
 
 /coverage
+Gemfile.lock
+.env
+.idea

@@ -26,7 +26,7 @@ class Bid < ApplicationRecord
   private
 
     def proposed_great_current
-      return if proposed_price.blank? || lot.current_price.blank?
+      return if proposed_price.blank?
 
       if proposed_price <= lot.current_price
         errors.add(:proposed_price, "must be greater than current price")

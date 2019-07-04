@@ -21,7 +21,5 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :lot
 
-  validates :arrival_location, presence: true
-  validates :arrival_type, presence: true
-  validates :status, presence: true
+  validates :arrival_location, :arrival_type, :status, presence: true
 end
