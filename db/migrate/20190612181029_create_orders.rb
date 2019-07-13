@@ -4,8 +4,8 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.references :lot, foreign_key: true
       t.text :arrival_location
-      t.string :arrival_type
-      t.string :status, default: 'pending'
+      t.integer :arrival_type, default: 0, null: false
+      t.integer :status, default: 0, null: false
 
       t.timestamps
     end

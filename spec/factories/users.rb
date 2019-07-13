@@ -40,5 +40,6 @@ FactoryBot.define do
     phone { Faker::PhoneNumber.unique.cell_phone }
     birth_day { Faker::Date.birthday(21, 65) }
     password { "123456" }
+    # confirmed_at { Date.today }
   end
 end

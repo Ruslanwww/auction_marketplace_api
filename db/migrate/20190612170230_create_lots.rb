@@ -5,7 +5,7 @@ class CreateLots < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :image
       t.text :description
-      t.string :status, default: 'pending'
+      t.integer :status, default: 0, null: false
       t.decimal :current_price
       t.decimal :estimated_price
       t.datetime :lot_start_time

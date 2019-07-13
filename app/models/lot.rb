@@ -9,7 +9,7 @@
 #  image           :string
 #  lot_end_time    :datetime
 #  lot_start_time  :datetime
-#  status          :string           default("pending")
+#  status          :integer          default("pending"), not null
 #  title           :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -26,7 +26,9 @@ class Lot < ApplicationRecord
   belongs_to :user
   has_many :bids, dependent: :destroy
   has_one :order, dependent: :destroy
+  attr_accessor :my_lot
 
+  enum status: [:pending, :in_process, :closed]
   validates :title, :current_price, :estimated_price, :status, :lot_start_time, :lot_end_time, presence: true
   validates_numericality_of :current_price, :estimated_price, greater_than: 0.0
   validate :est_price_greater_current, :end_after_start, :start_after_current_time

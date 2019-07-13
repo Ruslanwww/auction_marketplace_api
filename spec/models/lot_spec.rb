@@ -9,7 +9,7 @@
 #  image           :string
 #  lot_end_time    :datetime
 #  lot_start_time  :datetime
-#  status          :string           default("pending")
+#  status          :integer          default("pending"), not null
 #  title           :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
