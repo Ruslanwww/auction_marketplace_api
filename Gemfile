@@ -45,6 +45,8 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
   gem "dotenv-rails"
+  # Use sqlite3 as the database for Active Record
+  gem "sqlite3"
 end
 
 group :development do
@@ -55,8 +57,6 @@ group :development do
 
   gem "annotate"
   gem "rubocop-rails_config", "0.5.1"
-  # Use sqlite3 as the database for Active Record
-  gem "sqlite3"
 end
 
 group :test do
