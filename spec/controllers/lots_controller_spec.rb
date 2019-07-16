@@ -129,7 +129,7 @@ RSpec.describe LotsController, type: :controller do
 
       it "should return a not found message" do
         subject
-        expect(response.body).to match("{\"error\":\"Couldn't find Lot\"}")
+        expect(response.body).to match("{\"error\":\"Couldn't find Lot with 'id'=100\"}")
       end
     end
 
@@ -258,7 +258,7 @@ RSpec.describe LotsController, type: :controller do
 
       it "should error message" do
         subject
-        expect(response.body).to match("You do not have permission to modify this lot")
+        expect(response.body).to match("You are not have permission for this action")
       end
     end
   end
@@ -291,7 +291,7 @@ RSpec.describe LotsController, type: :controller do
 
       it "should error message" do
         subject
-        expect(response.body).to match("You do not have permission to modify this lot")
+        expect(response.body).to match("You are not have permission for this action")
       end
     end
 

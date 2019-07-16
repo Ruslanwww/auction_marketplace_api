@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
+  include DeviseWhitelist
+  include Pundit
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    render json: { error: exception.message }, status: :not_found
+  end
 
-  protected
-
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :lastname, :phone, :birth_day])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :lastname, :phone])
-    end
+  rescue_from Pundit::NotAuthorizedError do
+    render json: { error: "You are not have permission for this action" }, status: :unauthorized
+  end
 end

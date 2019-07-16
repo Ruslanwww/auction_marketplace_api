@@ -1,44 +1,45 @@
 class LotsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_lot, only: [:show, :update, :destroy]
-  before_action :owner, only: [:update, :destroy]
 
   def index
-    @lots = Lot.where(status: :in_process).order(created_at: :desc).page(params[:page])
-    render json: @lots, status: :ok
+    lots = Lot.where(status: :in_process).order(created_at: :desc).page(params[:page])
+    render json: lots, status: :ok
   end
 
   def my_lots
-    @lots = Lot.where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
-    check_my_lot(@lots)
-    render json: @lots, check_my_lot: true, status: :ok
+    lots = current_user.lots.order(created_at: :desc).page(params[:page])
+    check_my_lot(lots)
+    render json: lots, check_my_lot: true, status: :ok
   end
 
   def show
-    render json: @lot, show: true
+    lot = set_lot
+    render json: lot, show: true
   end
 
   def create
-    @lot = current_user.lots.new(lot_params)
-    @lot.status = :pending
-
-    if @lot.save
-      render json: @lot, status: :created
+    lot = current_user.lots.new(lot_params)
+    if lot.save
+      render json: lot, status: :created
     else
-      render json: @lot.errors, status: :unprocessable_entity
+      render json: lot.errors, status: :unprocessable_entity
     end
   end
 
   def update
-    if @lot.update(lot_params)
-      render json: @lot
+    lot = set_lot
+    authorize lot
+    if lot.update(lot_params)
+      render json: lot
     else
-      render json: @lot.errors, status: :unprocessable_entity
+      render json: lot.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @lot.destroy
+    lot = set_lot
+    authorize lot
+    lot.destroy
   end
 
   private
@@ -49,15 +50,8 @@ class LotsController < ApplicationController
       end
     end
 
-    def owner
-      @lot = current_user.lots.find_by(id: params[:id], status: :pending)
-      render json: "You do not have permission to modify this lot", status: :unauthorized if @lot.nil?
-    end
-
     def set_lot
-      @lot = Lot.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render json: { error: "Couldn't find Lot" }, status: :not_found
+      Lot.find(params[:id])
     end
 
     def lot_params
