@@ -3,16 +3,18 @@
 
 require 'factory_bot_rails'
 
+quantity = 10
+
 #User
 User.destroy_all
 
-FactoryBot.create_list(:user, 10)
+FactoryBot.create_list(:user, quantity)
 
-puts "Created #{User.count} users"
+puts "Created #{quantity} users"
 
 #Lot
 Lot.destroy_all
 
-FactoryBot.create_list(:lot, 10)
+FactoryBot.create_list(:lot, quantity)
 
-puts "Created #{Lot.count} lots"
+puts "Created #{quantity} lots"

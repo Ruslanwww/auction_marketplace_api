@@ -43,9 +43,11 @@ class User < ActiveRecord::Base
          :confirmable
   include DeviseTokenAuth::Concerns::User
 
-  has_many :lots, dependent: :destroy
-  has_many :bids, dependent: :destroy
-  has_many :orders, dependent: :destroy
+  with_options dependent: :destroy do |user|
+    user.has_many :lots
+    user.has_many :bids
+    user.has_many :orders
+  end
 
   validates :firstname, :lastname, :phone, :birth_day, presence: true
   validates :email, :phone, uniqueness: true
