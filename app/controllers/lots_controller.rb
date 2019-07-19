@@ -2,7 +2,7 @@ class LotsController < ApplicationController
   expose :lot
 
   def index
-    lots = Lot.where(status: :in_process).order(created_at: :desc).page(params[:page])
+    lots = Lot.in_process.order(created_at: :desc).page(params[:page])
     render json: lots, status: :ok
   end
 
