@@ -18,16 +18,14 @@ class LotsController < ApplicationController
 
   def create
     lot = current_user.lots.new(lot_params)
-    if lot.save!
-      render json: lot, status: :created
-    end
+    lot.save!
+    render json: lot, status: :created
   end
 
   def update
     authorize lot
-    if lot.update!(lot_params)
-      render json: lot
-    end
+    lot.update!(lot_params)
+    render json: lot
   end
 
   def destroy
