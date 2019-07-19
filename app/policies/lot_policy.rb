@@ -9,11 +9,7 @@ class LotPolicy < ApplicationPolicy
 
   private
 
-    def lot
-      record
-    end
-
     def pending_lot_owner?
-      user == lot.user && lot.status == "pending"
+      user == record.user && record.status == "pending"
     end
 end

@@ -5,7 +5,7 @@ RSpec.describe "Auth", type: :request do
     let(:params) { attributes_for(:user) }
     subject { post "/auth", params: params }
 
-    context "with valid attributes" do
+    context "with correct attributes" do
       it "should status code 200" do
         subject
         expect(response).to have_http_status(200)
@@ -20,7 +20,7 @@ RSpec.describe "Auth", type: :request do
       end
     end
 
-    context "with invalid attributes" do
+    context "with not correct attributes" do
       let(:params) { attributes_for(:user, password: "123") }
 
       it "should status code 422" do
@@ -43,15 +43,15 @@ RSpec.describe "Auth", type: :request do
     let(:params) { { email: user.email, password: "123456" } }
     subject { post "/auth/sign_in", params: params }
 
-    context "with valid attributes" do
+    context "with correct attributes" do
       it "should status code 200" do
         subject
         expect(response).to have_http_status(200)
       end
     end
 
-    context "with invalid password" do
-      let(:params) { { email: user.email, password: "123" } }
+    context "with not correct password" do
+      let(:params) { { email: user.email, password: "123123" } }
 
       it "should status code 401" do
         subject
@@ -59,7 +59,7 @@ RSpec.describe "Auth", type: :request do
       end
     end
 
-    context "with invalid email" do
+    context "with not correct email" do
       let(:params) { { email: "email@gmal.com", password: "123456" } }
 
       it "should status code 401" do

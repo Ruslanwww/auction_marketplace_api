@@ -1,5 +1,6 @@
 class LotsController < ApplicationController
   before_action :authenticate_user!
+  expose :lot
 
   def index
     lots = Lot.where(status: :in_process).order(created_at: :desc).page(params[:page])
@@ -13,31 +14,24 @@ class LotsController < ApplicationController
   end
 
   def show
-    lot = set_lot
     render json: lot, show: true
   end
 
   def create
     lot = current_user.lots.new(lot_params)
-    if lot.save
+    if lot.save!
       render json: lot, status: :created
-    else
-      render json: lot.errors, status: :unprocessable_entity
     end
   end
 
   def update
-    lot = set_lot
     authorize lot
-    if lot.update(lot_params)
+    if lot.update!(lot_params)
       render json: lot
-    else
-      render json: lot.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    lot = set_lot
     authorize lot
     lot.destroy
   end
@@ -48,10 +42,6 @@ class LotsController < ApplicationController
       lots.map do |lot|
         lot.my_lot = (lot.user_id == current_user.id)
       end
-    end
-
-    def set_lot
-      Lot.find(params[:id])
     end
 
     def lot_params
