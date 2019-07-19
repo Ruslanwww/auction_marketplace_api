@@ -1,5 +1,4 @@
 class LotsController < ApplicationController
-  before_action :authenticate_user!
   expose :lot
 
   def index

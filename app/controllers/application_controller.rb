@@ -4,6 +4,8 @@ class ApplicationController < ActionController::API
   include Pundit
   include ActionController::Helpers
 
+  before_action :authenticate_user!, unless: :devise_controller?
+
   rescue_from ActiveRecord::RecordNotFound do |exception|
     render json: { error: exception.message }, status: :not_found
   end
