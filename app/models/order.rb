@@ -21,5 +21,7 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :lot
 
+  enum arrival_type: [:pickup, :royal_mail, :united_states_postal_service, :dhl_express]
+  enum status: [:pending, :sent, :delivered]
   validates :arrival_location, :arrival_type, :status, presence: true
 end

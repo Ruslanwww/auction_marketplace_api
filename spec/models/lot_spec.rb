@@ -88,6 +88,8 @@ RSpec.describe Lot, type: :model do
 
     describe "#status" do
       it { should validate_presence_of(:status) }
+
+      it { should define_enum_for(:status).with_values([:pending, :in_process, :closed]) }
     end
   end
 end
