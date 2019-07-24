@@ -19,9 +19,13 @@ class Bid < ApplicationRecord
   belongs_to :user
   belongs_to :lot
 
+  attr_accessor :customer
+
+  after_create :lot_current_price_update
+
   validates :proposed_price, presence: true
   validates_numericality_of :proposed_price, greater_than: 0.0
-  validate :proposed_great_current
+  validate :proposed_great_current, :lot_in_process, :can_not_be_creator
 
   private
 
@@ -30,6 +34,28 @@ class Bid < ApplicationRecord
 
       if proposed_price <= lot.current_price
         errors.add(:proposed_price, "must be greater than current price")
+      end
+    end
+
+    def lot_in_process
+      return if lot.blank?
+
+      unless lot.status == "in_process"
+        errors.add(:lot, "lot status must be in_process")
+      end
+    end
+
+    def lot_current_price_update
+      if proposed_price > lot.current_price
+        lot.current_price = proposed_price
+      end
+    end
+
+    def can_not_be_creator
+      return if user.blank?
+
+      if user == lot.user
+        errors.add(:user, "can not be the creator of the lot")
       end
     end
 end

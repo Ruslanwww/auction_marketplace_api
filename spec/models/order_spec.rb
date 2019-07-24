@@ -34,13 +34,13 @@ RSpec.describe Order, type: :model do
 
     it do
       should define_enum_for(:arrival_type).
-        with_values([:pickup, :royal_mail, :united_states_postal_service, :dhl_express])
+        with_values(%i[pickup royal_mail united_states_postal_service dhl_express])
     end
   end
 
   describe "#status" do
     it { should validate_presence_of(:status) }
 
-    it { should define_enum_for(:status).with_values([:pending, :sent, :delivered]) }
+    it { should define_enum_for(:status).with_values(%i[pending sent delivered]) }
   end
 end

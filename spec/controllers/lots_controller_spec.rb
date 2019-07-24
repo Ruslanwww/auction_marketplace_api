@@ -79,8 +79,12 @@ RSpec.describe LotsController, type: :controller do
       end
 
       context "should return proper json" do
-        let!(:user_lots) { create_list :lot, 13, user: @user }
-        let!(:no_user_lots) { create_list :lot, 5, user: create(:user) }
+        let!(:user_lots) { create_list :lot, 9, created_at: 1.day.after, user: @user }
+        let!(:no_user_lot) { create :lot, status: :in_process }
+        let!(:no_user_lot2) { create :lot, status: :in_process }
+        let!(:no_user_lot3) { create :lot }
+        let!(:bid) { create :bid, lot: no_user_lot, user: @user }
+        let!(:bid2) { create :bid, lot: no_user_lot2, user: @user }
         let(:fields) { super() + [:my_lot] }
 
         it "should return 10 articles without parameters" do
@@ -91,16 +95,35 @@ RSpec.describe LotsController, type: :controller do
         context "page 2" do
           let(:params) { { page: 2 } }
 
-          it "should return 3 articles for page 2" do
+          it "should return 1 article for page 2" do
             subject
-            expect(json.length).to eq(3)
+            expect(json.length).to eq(1)
+          end
+        end
+
+        context "with created filter" do
+          let(:params) { { filter: :created } }
+
+          it "should return 9 articles" do
+            subject
+            expect(json.length).to eq(9)
+          end
+        end
+
+        context "with participation filter" do
+          let(:params) { { filter: :participation } }
+
+          it "should return 2 articles" do
+            subject
+            expect(json.length).to eq(2)
           end
         end
 
         it "should return :my_lot 10 true" do
           subject
+          p json
           my_lot_array = json.pluck(:my_lot)
-          expect(my_lot_array.select { |my_lot|  my_lot }.count).to eq 10
+          expect(my_lot_array.select { |my_lot|  my_lot }.count).to eq 9
         end
 
         it "should use serializer" do
@@ -169,8 +192,6 @@ RSpec.describe LotsController, type: :controller do
       end
 
       context "should return proper json" do
-        let(:fields) { super() + [:bids] }
-
         it "should use serializer" do
           subject
           expect(json).to include(*fields)
@@ -388,7 +409,7 @@ RSpec.describe LotsController, type: :controller do
       context "with status :closed" do
         let(:lot) { create :lot, status: :closed, user: user }
 
-        it "do not delete with :in_progress status" do
+        it "do not delete with :closed status" do
           subject
           expect(response).to have_http_status(401)
         end

@@ -24,5 +24,4 @@ class LotSerializer < ActiveModel::Serializer
   attributes :id, :user_id, :title, :description, :current_price, :estimated_price,
             :image, :lot_start_time, :lot_end_time, :status
   attribute :my_lot, if: -> { instance_options[:check_my_lot] }
-  has_many :bids, if: -> { instance_options[:show] }
 end

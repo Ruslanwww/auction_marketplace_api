@@ -7,13 +7,20 @@ class LotsController < ApplicationController
   end
 
   def my_lots
-    lots = current_user.lots.order(created_at: :desc).page(params[:page])
+    if params[:filter] == "created"
+      lots = current_user.lots.order(created_at: :desc).page(params[:page])
+    elsif  params[:filter] == "participation"
+      lots = Lot.where(id: current_user.bids.pluck(:lot_id)).order(created_at: :desc).page(params[:page])
+    else
+      lots = Lot.where(id: current_user.bids.pluck(:lot_id)).or(Lot.where(user_id: current_user.lots.pluck(:user_id)))
+                 .order(created_at: :desc).page(params[:page])
+    end
     check_my_lot(lots)
     render json: lots, check_my_lot: true, status: :ok
   end
 
   def show
-    render json: lot, show: true
+    render json: lot, status: :ok
   end
 
   def create

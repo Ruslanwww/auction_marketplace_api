@@ -7,14 +7,15 @@ quantity = 10
 
 #User
 User.destroy_all
-
 FactoryBot.create_list(:user, quantity)
-
 puts "Created #{quantity} users"
 
 #Lot
 Lot.destroy_all
-
-FactoryBot.create_list(:lot, quantity)
-
+FactoryBot.create_list(:lot, quantity, user: User.first, status: :in_process)
 puts "Created #{quantity} lots"
+
+#Bid
+Bid.destroy_all
+FactoryBot.create_list(:bid, quantity, lot: Lot.first)
+puts "Created #{quantity} bids"
