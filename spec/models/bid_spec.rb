@@ -42,22 +42,29 @@ RSpec.describe Bid, type: :model do
   end
 
   context "validation for lot status" do
-    let(:bid_in_process) { build(:bid, lot: create(:lot, status: :in_process)) }
-    let(:bid_pending) { build(:bid, lot: create(:lot, status: :pending)) }
-    let(:bid_closed) { build(:bid, lot: create(:lot, status: :closed)) }
+    let(:status) { :in_process }
+    let(:bid) { build(:bid, lot: create(:lot, status: status)) }
 
     it "should valid if lot status :in_process" do
-      expect(bid_in_process).to be_valid
+      expect(bid).to be_valid
     end
 
-    it "should error if lot status :pending" do
-      bid_pending.valid?
-      expect(bid_pending.errors[:lot]).to include "lot status must be in_process"
+    context "when lot status :pending" do
+      let(:status) { :pending }
+
+      it "should lot status error" do
+        bid.valid?
+        expect(bid.errors[:lot]).to include "lot status must be in_process"
+      end
     end
 
-    it "should error if lot status :closed" do
-      bid_closed.valid?
-      expect(bid_closed.errors[:lot]).to include "lot status must be in_process"
+    context "when lot status :closed" do
+      let(:status) { :closed }
+
+      it "should lot status error" do
+        bid.valid?
+        expect(bid.errors[:lot]).to include "lot status must be in_process"
+      end
     end
   end
 
