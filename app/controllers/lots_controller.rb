@@ -7,14 +7,7 @@ class LotsController < ApplicationController
   end
 
   def my_lots
-    if params[:filter] == "created"
-      lots = current_user.lots.order(created_at: :desc).page(params[:page])
-    elsif  params[:filter] == "participation"
-      lots = Lot.where(id: current_user.bids.pluck(:lot_id)).order(created_at: :desc).page(params[:page])
-    else
-      lots = Lot.where(id: current_user.bids.pluck(:lot_id)).or(Lot.where(user_id: current_user.lots.pluck(:user_id)))
-                 .order(created_at: :desc).page(params[:page])
-    end
+    lots = filtered_lot.order(created_at: :desc).page(params[:page])
     check_my_lot(lots)
     render json: lots, check_my_lot: true, status: :ok
   end
@@ -41,6 +34,20 @@ class LotsController < ApplicationController
   end
 
   private
+
+    def filtered_lot
+      if params[:filter] == "created"
+        current_user.lots
+      elsif  params[:filter] == "participation"
+        participation_lot
+      else
+        participation_lot.or(Lot.where(user_id: current_user.lots.pluck(:user_id)))
+      end
+    end
+
+    def participation_lot
+      Lot.where(id: current_user.bids.pluck(:lot_id))
+    end
 
     def check_my_lot(lots)
       lots.map do |lot|
