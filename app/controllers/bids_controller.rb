@@ -8,8 +8,7 @@ class BidsController < ApplicationController
   end
 
   def create
-    bid = current_user.bids.new(bid_params)
-    bid.save!
+    bid = current_user.bids.create!(bid_params)
     render json: bid, status: :created
   end
 
