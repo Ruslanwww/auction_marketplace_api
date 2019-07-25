@@ -32,30 +32,23 @@ class Bid < ApplicationRecord
     def proposed_great_current
       return if proposed_price.blank?
 
-      if proposed_price <= lot.current_price
-        errors.add(:proposed_price, "must be greater than current price")
+      errors.add(:proposed_price, "must be greater than current price") if proposed_price <= lot.current_price
       end
-    end
 
     def lot_in_process
       return if lot.blank?
 
-      unless lot.status == "in_process"
-        errors.add(:lot, "lot status must be in_process")
-      end
+      errors.add(:lot, "lot status must be in_process") unless lot.in_process?
     end
 
     def lot_current_price_update
-      if proposed_price > lot.current_price
-        lot.current_price = proposed_price
-      end
+      lot.current_price = proposed_price
+      lot.save!
     end
 
     def can_not_be_creator
       return if user.blank?
 
-      if user == lot.user
-        errors.add(:user, "can not be the creator of the lot")
-      end
+      errors.add(:user, "can not be the creator of the lot") if user == lot.user
     end
 end

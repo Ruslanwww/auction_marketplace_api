@@ -65,7 +65,7 @@ RSpec.describe Bid, type: :model do
     let(:bid) { create(:bid) }
 
     it "should update lot current_price" do
-      expect(bid.lot.current_price).to eq bid.proposed_price
+      expect(bid.lot.reload.current_price).to eq bid.proposed_price
     end
   end
 
