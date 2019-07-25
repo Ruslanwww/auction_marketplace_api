@@ -77,20 +77,24 @@ RSpec.describe Bid, type: :model do
   end
 
   context "validation for the bid creator user" do
-    let(:user_creator) { create(:user) }
     let(:user) { create(:user) }
-    let(:lot) { create(:lot, status: :in_process, user: user_creator) }
-    let(:bid_creator) { build(:bid, lot: lot, user: user_creator) }
-    let(:bid) { build(:bid, lot: lot, user: user) }
+    let(:lot) { create(:lot, status: :in_process, user: user) }
 
+    context "when user is creator" do
+      let(:bid) { build(:bid, lot: lot, user: user) }
 
-    it "should error for lot creator" do
-      bid_creator.valid?
-      expect(bid_creator.errors[:user]).to include "can not be the creator of the lot"
+      it "should error for lot creator" do
+        bid.valid?
+        expect(bid.errors[:user]).to include "can not be the creator of the lot"
+      end
     end
 
-    it "should be valid for non lot creator" do
-      expect(bid).to be_valid
+    context "when user is not creator" do
+      let(:bid) { build(:bid, lot: lot, user: create(:user)) }
+
+      it "should be valid for non lot creator" do
+        expect(bid).to be_valid
+      end
     end
   end
 end
