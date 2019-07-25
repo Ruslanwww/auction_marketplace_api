@@ -2,20 +2,24 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 require 'factory_bot_rails'
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
+
+DatabaseCleaner.clean
 
 quantity = 10
 
 #User
-User.destroy_all
 FactoryBot.create_list(:user, quantity)
 puts "Created #{quantity} users"
 
 #Lot
-Lot.destroy_all
 FactoryBot.create_list(:lot, quantity, user: User.first, status: :in_process)
 puts "Created #{quantity} lots"
 
 #Bid
-Bid.destroy_all
-FactoryBot.create_list(:bid, quantity, lot: Lot.first)
+Lot.all.each do |lot|
+  FactoryBot.create(:bid, lot: lot, user: User.last)
+end
 puts "Created #{quantity} bids"
