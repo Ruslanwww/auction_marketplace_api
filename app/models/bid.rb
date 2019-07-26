@@ -30,13 +30,13 @@ class Bid < ApplicationRecord
   private
 
     def proposed_great_current
-      return if proposed_price.blank?
+      return if proposed_price.blank? || lot.nil?
 
       errors.add(:proposed_price, "must be greater than current price") if proposed_price <= lot.current_price
       end
 
     def lot_in_process
-      return if lot.blank?
+      return if lot.nil?
 
       errors.add(:lot, "lot status must be in_process") unless lot.in_process?
     end
@@ -47,7 +47,7 @@ class Bid < ApplicationRecord
     end
 
     def can_not_be_creator
-      return if user.blank?
+      return if user.nil?
 
       errors.add(:user, "can not be the creator of the lot") if user == lot.user
     end
