@@ -13,7 +13,8 @@ class LotsController < ApplicationController
   end
 
   def show
-    render json: lot, status: :ok
+    check_win(lot) if lot.bids.present?
+    render json: lot, check_my_win: true, status: :ok
   end
 
   def create
@@ -53,6 +54,10 @@ class LotsController < ApplicationController
       lots.map do |lot|
         lot.my_lot = (lot.user_id == current_user.id)
       end
+    end
+
+    def check_win(lot)
+      lot.my_win = lot.winner_bid.user == current_user
     end
 
     def lot_params

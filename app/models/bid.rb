@@ -21,7 +21,7 @@ class Bid < ApplicationRecord
 
   attr_accessor :customer
 
-  after_create :lot_current_price_update
+  after_create :lot_current_price_update, :check_estimated_price_lot
 
   validates :proposed_price, presence: true
   validates_numericality_of :proposed_price, greater_than: 0.0
@@ -50,5 +50,12 @@ class Bid < ApplicationRecord
       return if user.nil?
 
       errors.add(:user, "can not be the creator of the lot") if user == lot.user
+    end
+
+    def check_estimated_price_lot
+      if proposed_price >= lot.estimated_price
+        lot.close!
+        Sidekiq::ScheduledSet.new.select { |job| job.display_args.first == lot.id }.map(&:delete)
+      end
     end
 end

@@ -12,11 +12,6 @@ class BidsController < ApplicationController
     render json: bid, status: :created
   end
 
-  def destroy
-    authorize bid
-    bid.destroy
-  end
-
   private
 
     def bid_params

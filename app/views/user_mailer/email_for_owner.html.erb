@@ -1,0 +1,8 @@
+<h1><%= @user.firstname %>, Your lot <%= @lot.title %> is closed.</h1>
+<p>
+  <% if @lot.bids.present? %>
+    Max proposed price: <%= @lot.current_price %>
+  <% else %>
+    Unfortunately, there are no bids on your lot.
+  <% end %>
+</p>

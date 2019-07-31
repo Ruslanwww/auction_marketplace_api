@@ -63,4 +63,5 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.extend ControllerMacros, type: :controller
   config.include ControllerSpecHelper, type: :controller
+  config.include ActiveJob::TestHelper, type: :job
 end

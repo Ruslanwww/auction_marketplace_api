@@ -97,4 +97,24 @@ RSpec.describe Bid, type: :model do
       end
     end
   end
+
+  context "when proposed_price >= lot estimated price" do
+    let(:lot) { create(:lot, status: :in_process) }
+
+    context "when eq estimated price" do
+      let!(:bid) { create(:bid, lot: lot, proposed_price: lot.estimated_price) }
+
+      it "should close! lot" do
+        expect(lot.reload.status).to eq "closed"
+      end
+    end
+
+    context "when greater than estimated price" do
+      let!(:bid) { create(:bid, lot: lot, proposed_price: lot.estimated_price + 1.0) }
+
+      it "should close! lot" do
+        expect(lot.reload.status).to eq "closed"
+      end
+    end
+  end
 end

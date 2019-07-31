@@ -26,19 +26,33 @@ class Lot < ApplicationRecord
   belongs_to :user
   has_many :bids, dependent: :destroy
   has_one :order, dependent: :destroy
-  attr_accessor :my_lot
+  attr_accessor :my_lot, :my_win
+
+  after_create_commit :set_jobs
+  after_update_commit :set_new_jobs
+  after_destroy_commit :clear_jobs
 
   enum status: [:pending, :in_process, :closed]
   validates :title, :current_price, :estimated_price, :status, :lot_start_time, :lot_end_time, presence: true
   validates_numericality_of :current_price, :estimated_price, greater_than: 0.0
   validate :est_price_greater_current, :end_after_start, :start_after_current_time
 
+  def close!
+    update! status: :closed
+    UserMailer.email_for_winner(self).deliver_later if bids.present?
+    UserMailer.email_for_owner(self).deliver_later
+  end
+
+  def winner_bid
+    bids.order(proposed_price: :desc).first
+  end
+
   private
 
     def est_price_greater_current
       return if estimated_price.blank? || current_price.blank?
 
-      if estimated_price < current_price
+      if estimated_price < current_price && pending?
         errors.add(:estimated_price, "must be greater than current price")
       end
     end
@@ -57,5 +71,27 @@ class Lot < ApplicationRecord
       if lot_end_time < lot_start_time
         errors.add(:lot_end_time, "must be after the start time")
       end
+    end
+
+    def set_jobs
+      jobs_add
+    end
+
+    def set_new_jobs
+      jobs_delete
+      jobs_add
+    end
+
+    def clear_jobs
+      jobs_delete
+    end
+
+    def jobs_add
+      OpenLotJob.set(wait_until: lot_start_time).perform_later(id)
+      CloseLotJob.set(wait_until: lot_end_time).perform_later(id)
+    end
+
+    def jobs_delete
+      Sidekiq::ScheduledSet.new.select { |job| job.display_args.first == id }.map(&:delete)
     end
 end

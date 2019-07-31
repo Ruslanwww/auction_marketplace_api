@@ -142,7 +142,7 @@ RSpec.describe LotsController, type: :controller do
 
   describe "GET #show" do
     login(:user)
-    let(:lot) { create :lot }
+    let(:lot) { create :lot, status: :in_process }
     let(:params) { { id: lot.id } }
     subject { get :show, params: params }
 
@@ -174,9 +174,35 @@ RSpec.describe LotsController, type: :controller do
     end
 
     context "should return proper json" do
+      let(:fields) { super() + [:my_win] }
+
       it "should use serializer" do
         subject
         expect(json).to include(*fields)
+      end
+    end
+
+    context "when current user user is winner" do
+      before(:each) do
+        create(:bid, lot: lot, proposed_price: lot.current_price + 1.0)
+        create(:bid, lot: lot, user: @user, proposed_price: lot.current_price + 2.0)
+      end
+
+      it "should my_win is true" do
+        subject
+        expect(json[:my_win]).to eq true
+      end
+    end
+
+    context "when current user user is not winner" do
+      before(:each) do
+        create(:bid, lot: lot, user: @user, proposed_price: lot.current_price + 1.0)
+        create(:bid, lot: lot, proposed_price: lot.current_price + 2.0)
+      end
+
+      it "should my_win is false" do
+        subject
+        expect(json[:my_win]).to eq false
       end
     end
   end
