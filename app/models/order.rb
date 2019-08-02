@@ -4,8 +4,8 @@
 #
 #  id               :integer          not null, primary key
 #  arrival_location :text
-#  arrival_type     :integer          default(0), not null
-#  status           :integer          default(0), not null
+#  arrival_type     :integer          default("pickup"), not null
+#  status           :integer          default("pending"), not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  lot_id           :integer

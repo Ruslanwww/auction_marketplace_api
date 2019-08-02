@@ -76,29 +76,7 @@ RSpec.describe Bid, type: :model do
     end
   end
 
-  context "validation for the bid creator user" do
-    let(:user) { create(:user) }
-    let(:lot) { create(:lot, status: :in_process, user: user) }
-
-    context "when user is creator" do
-      let(:bid) { build(:bid, lot: lot, user: user) }
-
-      it "should error for lot creator" do
-        bid.valid?
-        expect(bid.errors[:user]).to include "can not be the creator of the lot"
-      end
-    end
-
-    context "when user is not creator" do
-      let(:bid) { build(:bid, lot: lot, user: create(:user)) }
-
-      it "should be valid for non lot creator" do
-        expect(bid).to be_valid
-      end
-    end
-  end
-
-  context "when proposed_price >= lot estimated price" do
+  context "with the interaction of the proposed_price to the estimated_price" do
     let(:lot) { create(:lot, status: :in_process) }
 
     context "when eq estimated price" do
@@ -114,6 +92,14 @@ RSpec.describe Bid, type: :model do
 
       it "should close! lot" do
         expect(lot.reload.status).to eq "closed"
+      end
+    end
+
+    context "when less than estimated price" do
+      let!(:bid) { create(:bid, lot: lot, proposed_price: lot.estimated_price - 1.0) }
+
+      it "should not close! lot" do
+        expect(lot.reload.status).to_not eq "closed"
       end
     end
   end

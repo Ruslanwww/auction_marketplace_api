@@ -25,7 +25,7 @@ class Bid < ApplicationRecord
 
   validates :proposed_price, presence: true
   validates_numericality_of :proposed_price, greater_than: 0.0
-  validate :proposed_great_current, :lot_in_process, :can_not_be_creator
+  validate :proposed_great_current, :lot_in_process
 
   private
 
@@ -44,12 +44,6 @@ class Bid < ApplicationRecord
     def lot_current_price_update
       lot.current_price = proposed_price
       lot.save!
-    end
-
-    def can_not_be_creator
-      return if user.nil?
-
-      errors.add(:user, "can not be the creator of the lot") if user == lot.user
     end
 
     def check_estimated_price_lot

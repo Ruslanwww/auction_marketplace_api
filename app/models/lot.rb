@@ -28,9 +28,9 @@ class Lot < ApplicationRecord
   has_one :order, dependent: :destroy
   attr_accessor :my_lot, :my_win
 
-  after_create_commit :set_jobs
+  after_create_commit :jobs_add
   after_update_commit :set_new_jobs
-  after_destroy_commit :clear_jobs
+  after_destroy_commit :jobs_delete
 
   enum status: [:pending, :in_process, :closed]
   validates :title, :current_price, :estimated_price, :status, :lot_start_time, :lot_end_time, presence: true
@@ -38,7 +38,7 @@ class Lot < ApplicationRecord
   validate :est_price_greater_current, :end_after_start, :start_after_current_time
 
   def close!
-    update! status: :closed
+    closed!
     UserMailer.email_for_winner(self).deliver_later if bids.present?
     UserMailer.email_for_owner(self).deliver_later
   end
@@ -73,17 +73,9 @@ class Lot < ApplicationRecord
       end
     end
 
-    def set_jobs
-      jobs_add
-    end
-
     def set_new_jobs
       jobs_delete
-      jobs_add
-    end
-
-    def clear_jobs
-      jobs_delete
+      jobs_add if pending?
     end
 
     def jobs_add

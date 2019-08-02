@@ -175,6 +175,9 @@ RSpec.describe LotsController, type: :controller do
 
     context "should return proper json" do
       let(:fields) { super() + [:my_win] }
+      before(:each) do
+        lot.closed!
+      end
 
       it "should use serializer" do
         subject
@@ -186,6 +189,7 @@ RSpec.describe LotsController, type: :controller do
       before(:each) do
         create(:bid, lot: lot, proposed_price: lot.current_price + 1.0)
         create(:bid, lot: lot, user: @user, proposed_price: lot.current_price + 2.0)
+        lot.closed!
       end
 
       it "should my_win is true" do
@@ -198,6 +202,7 @@ RSpec.describe LotsController, type: :controller do
       before(:each) do
         create(:bid, lot: lot, user: @user, proposed_price: lot.current_price + 1.0)
         create(:bid, lot: lot, proposed_price: lot.current_price + 2.0)
+        lot.closed!
       end
 
       it "should my_win is false" do

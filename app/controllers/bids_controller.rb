@@ -9,6 +9,7 @@ class BidsController < ApplicationController
 
   def create
     bid = current_user.bids.create!(bid_params)
+    authorize bid
     render json: bid, status: :created
   end
 

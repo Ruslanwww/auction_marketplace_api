@@ -13,8 +13,8 @@ class LotsController < ApplicationController
   end
 
   def show
-    check_win(lot) if lot.bids.present?
-    render json: lot, check_my_win: true, status: :ok
+    check_win(lot) if lot.closed? && lot.bids.present?
+    render json: lot, check_my_win: lot.closed?, status: :ok
   end
 
   def create

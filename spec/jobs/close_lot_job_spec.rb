@@ -17,4 +17,27 @@ RSpec.describe CloseLotJob, type: :job do
   it "is in default queue" do
     expect(described_class.new.queue_name).to eq("default")
   end
+
+  describe "#perform" do
+    let(:lot_status) { :in_process }
+    let(:lot) { create :lot, status: lot_status }
+    subject { described_class.new.perform lot.id }
+
+    it "submit service was launched" do
+      expect(Lot).to receive(:find).with(1).and_return(lot)
+      expect(lot).to receive(:close!)
+      subject
+    end
+
+    context "with pending status" do
+      let(:lot_status) { :pending }
+      subject { described_class.new.perform(lot.id) }
+
+      it "submit service was launched" do
+        expect(Lot).to receive(:find).and_return(lot)
+        expect(lot).to_not receive(:close!)
+        subject
+      end
+    end
+  end
 end

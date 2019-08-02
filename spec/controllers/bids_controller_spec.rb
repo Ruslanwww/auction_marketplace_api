@@ -92,5 +92,16 @@ RSpec.describe BidsController, type: :controller do
         expect(json).to eq error: "Validation failed: Proposed price must be greater than current price"
       end
     end
+
+    context "when user is creator" do
+      before(:each) do
+        lot.update! user: @user
+      end
+
+      it "should error for lot creator" do
+        subject
+        expect(json).to eq error: "You are not have permission for this action"
+      end
+    end
   end
 end
