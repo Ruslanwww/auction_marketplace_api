@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe OpenLotJob, type: :job do
   let(:param) { 1 }
-  subject(:job) { described_class.perform_later(param) }
+  subject(:job) { described_class.perform_later param }
 
   it "queues the job" do
     expect { job }.to change(ActiveJob::Base.queue_adapter.enqueued_jobs, :size).by(1)
@@ -24,17 +24,17 @@ RSpec.describe OpenLotJob, type: :job do
     subject { described_class.new.perform lot.id }
 
     it "submit service was launched" do
-      expect(Lot).to receive(:find).with(1).and_return(lot)
+      expect(Lot).to receive(:find).with(lot.id).and_return(lot)
       expect(lot).to receive(:in_process!)
       subject
     end
 
     context "with closed status" do
       let(:lot_status) { :closed }
-      subject { described_class.new.perform(lot.id) }
+      subject { described_class.new.perform lot.id }
 
       it "submit service was launched" do
-        expect(Lot).to receive(:find).and_return(lot)
+        expect(Lot).to receive(:find).with(lot.id).and_return(lot)
         expect(lot).to_not receive(:in_process!)
         subject
       end
