@@ -48,7 +48,6 @@ class Lot < ApplicationRecord
   end
 
   private
-
     def est_price_greater_current
       return if estimated_price.blank? || current_price.blank?
 

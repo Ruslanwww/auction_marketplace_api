@@ -61,7 +61,7 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0.0"
 
   gem "annotate"
-  gem "rubocop-rails_config", "0.5.1"
+  gem "rubocop-rails_config"
 end
 
 group :test do

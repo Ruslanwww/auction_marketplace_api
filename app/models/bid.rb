@@ -28,7 +28,6 @@ class Bid < ApplicationRecord
   validate :proposed_great_current, :lot_in_process
 
   private
-
     def proposed_great_current
       return if proposed_price.blank? || lot.nil?
 

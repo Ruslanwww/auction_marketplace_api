@@ -35,7 +35,6 @@ class LotsController < ApplicationController
   end
 
   private
-
     def filtered_lot
       if params[:filter] == "created"
         current_user.lots

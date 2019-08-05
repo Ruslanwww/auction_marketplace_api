@@ -14,7 +14,6 @@ class BidsController < ApplicationController
   end
 
   private
-
     def bid_params
       params.require(:bid).permit(:proposed_price, :lot_id)
     end
