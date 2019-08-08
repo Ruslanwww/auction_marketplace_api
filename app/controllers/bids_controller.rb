@@ -3,7 +3,6 @@ class BidsController < ApplicationController
 
   def index
     bids = Bid.where(lot_id: params[:lot_id]).order(proposed_price: :desc)
-    customer_info(bids)
     render json: bids, customer_info: true, status: :ok
   end
 
@@ -16,15 +15,5 @@ class BidsController < ApplicationController
   private
     def bid_params
       params.require(:bid).permit(:proposed_price, :lot_id)
-    end
-
-    def customer_info(bids)
-      bids.map.with_index do |bid, i|
-        if bid.user == current_user
-          bid.customer = "You"
-        else
-          bid.customer = "Customer #{i + 1}"
-        end
-      end
     end
 end

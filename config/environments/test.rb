@@ -47,4 +47,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.active_job.queue_adapter = :test
+
+  config.action_cable.url = 'wss://localhost:3000/cable'
+  config.action_cable.disable_request_forgery_protection = true
 end

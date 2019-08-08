@@ -29,8 +29,10 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'auth'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  mount ActionCable.server => "/cable"
   resources :lots, except: [:new, :edit]
   get 'lots/my_lots' => 'lots#my_lots', as: 'my_lots'
+  get 'current_user_info' => 'lots#current_user_info', as: 'current_user_info'
   resources :bids, only: [:index, :create]
 
   require 'sidekiq/web'

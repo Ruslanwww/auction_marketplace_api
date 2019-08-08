@@ -12,6 +12,10 @@ class LotsController < ApplicationController
     render json: lots, check_my_lot: true, status: :ok
   end
 
+  def current_user_info
+    render json: { code: Digest::SHA1.hexdigest([current_user.id, lot.id].join)[0...10] }
+  end
+
   def show
     check_win(lot) if lot.closed? && lot.bids.present?
     render json: lot, check_my_win: lot.closed?, status: :ok

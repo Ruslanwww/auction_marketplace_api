@@ -140,6 +140,24 @@ RSpec.describe LotsController, type: :controller do
     end
   end
 
+  describe "GET #current_user_info" do
+    login(:user)
+    let(:lot) { create :lot }
+    let(:params) { { id: lot.id } }
+    let(:fields) { [:code] }
+    subject { get :current_user_info, params: params }
+
+    it "should status code 200" do
+      subject
+      expect(response).to have_http_status(200)
+    end
+
+    it "should return proper json" do
+      subject
+      expect(json).to include(*fields)
+    end
+  end
+
   describe "GET #show" do
     login(:user)
     let(:lot) { create :lot, status: :in_process }
