@@ -68,11 +68,14 @@ RSpec.describe BidsController, type: :controller do
         is_expected.to have_http_status(201)
       end
 
-      context "should return proper json" do
-        it "should use serializer" do
-          subject
-          expect(json).to include(*fields)
-        end
+      it "should queues the job" do
+        expect(BidBroadcastJob).to receive(:perform_later)
+        subject
+      end
+
+      it "should use serializer" do
+        subject
+        expect(json).to include(*fields)
       end
     end
 

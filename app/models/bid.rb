@@ -22,7 +22,6 @@ class Bid < ApplicationRecord
   attr_accessor :customer
 
   after_create :lot_current_price_update, :check_estimated_price_lot
-  after_create_commit :bid_broadcast_job
 
   validates :proposed_price, presence: true
   validates_numericality_of :proposed_price, greater_than: 0.0
@@ -51,9 +50,5 @@ class Bid < ApplicationRecord
         lot.close!
         Sidekiq::ScheduledSet.new.select { |job| job.display_args.first == lot.id }.map(&:delete)
       end
-    end
-
-    def bid_broadcast_job
-      BidBroadcastJob.perform_later id
     end
 end

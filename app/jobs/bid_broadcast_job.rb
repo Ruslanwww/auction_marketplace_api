@@ -3,6 +3,6 @@ class BidBroadcastJob < ApplicationJob
 
   def perform(id)
     bid = Bid.find(id)
-    ActionCable.server.broadcast "bids_for_lot_#{bid.lot_id}", BidSerializer.new(bid, customer_info: true).as_json
+    ActionCable.server.broadcast "bids_for_lot_#{bid.lot_id}", BidSerializer.new(bid).as_json
   end
 end

@@ -14,10 +14,12 @@ RSpec.describe BidBroadcastJob, type: :job do
 
   describe "#perform" do
     let(:bid) { create :bid }
+    let(:bid_job) { described_class.new }
 
     it "should broadcasts bid" do
-      expect { described_class.perform_now(bid.id) }
+      expect { bid_job.perform(bid.id) }
           .to have_broadcasted_to("bids_for_lot_#{bid.lot_id}").from_channel(BidsChannel)
+                  .with(hash_excluding(BidSerializer.new(bid).to_json))
     end
   end
 end

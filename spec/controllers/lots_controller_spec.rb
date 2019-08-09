@@ -144,7 +144,6 @@ RSpec.describe LotsController, type: :controller do
     login(:user)
     let(:lot) { create :lot }
     let(:params) { { id: lot.id } }
-    let(:fields) { [:code] }
     subject { get :current_user_info, params: params }
 
     it "should status code 200" do
@@ -154,7 +153,7 @@ RSpec.describe LotsController, type: :controller do
 
     it "should return proper json" do
       subject
-      expect(json).to include(*fields)
+      expect(json[:code]).to eq(Digest::SHA1.hexdigest([@user.id, lot.id].join)[0...10])
     end
   end
 
