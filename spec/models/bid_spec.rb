@@ -21,6 +21,7 @@ RSpec.describe Bid, type: :model do
   describe "Associations" do
     it { should belong_to(:user) }
     it { should belong_to(:lot) }
+    it { should have_one(:order) }
   end
 
   describe "#proposed_price" do

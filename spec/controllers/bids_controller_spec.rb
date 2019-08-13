@@ -57,7 +57,7 @@ RSpec.describe BidsController, type: :controller do
     login(:user)
     let(:lot) { create :lot, status: :in_process }
     let(:proposed_price) { lot.current_price + 1.0 }
-    subject { post :create, params: { bid: { proposed_price: proposed_price, lot_id: lot.id } } }
+    subject { post :create, params: { bid: { proposed_price: proposed_price }, lot_id: lot.id } }
 
     context "with valid attributes" do
       it "creates a new bid" do

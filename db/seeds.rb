@@ -23,3 +23,10 @@ Lot.all.each do |lot|
   FactoryBot.create(:bid, lot: lot, user: User.last)
 end
 puts "Created #{quantity} bids"
+
+#Order
+Lot.all.each do |lot|
+  lot.closed!
+  FactoryBot.create(:order, lot: lot, bid: lot.bids.last)
+end
+puts "Created #{quantity} orders"

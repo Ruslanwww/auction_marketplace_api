@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_205009) do
+ActiveRecord::Schema.define(version: 2019_08_14_073140) do
 
   create_table "bids", force: :cascade do |t|
     t.integer "user_id"
@@ -38,15 +38,15 @@ ActiveRecord::Schema.define(version: 2019_06_19_205009) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "lot_id"
     t.text "arrival_location"
-    t.integer "arrival_type", default: 0, null: false
+    t.integer "arrival_type", null: false
     t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bid_id"
+    t.index ["bid_id"], name: "index_orders_on_bid_id"
     t.index ["lot_id"], name: "index_orders_on_lot_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

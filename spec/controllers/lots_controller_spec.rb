@@ -202,7 +202,7 @@ RSpec.describe LotsController, type: :controller do
       end
     end
 
-    context "when current user user is winner" do
+    context "when current user is winner" do
       before(:each) do
         create(:bid, lot: lot, proposed_price: lot.current_price + 1.0)
         create(:bid, lot: lot, user: @user, proposed_price: lot.current_price + 2.0)

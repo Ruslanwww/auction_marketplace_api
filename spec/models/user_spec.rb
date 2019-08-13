@@ -37,7 +37,6 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   describe "Associations" do
     it { should have_many(:lots).dependent(:destroy) }
-    it { should have_many(:orders).dependent(:destroy) }
     it { should have_many(:bids).dependent(:destroy) }
   end
 
