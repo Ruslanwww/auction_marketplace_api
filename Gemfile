@@ -16,7 +16,7 @@ gem "puma", "~> 3.11"
 
 # Use ActiveStorage variant
 
-gem "carrierwave", "~> 1.0"
+gem "carrierwave", "~> 1.3"
 gem "mini_magick", "~> 4.8"
 
 # Use Capistrano for deployment
